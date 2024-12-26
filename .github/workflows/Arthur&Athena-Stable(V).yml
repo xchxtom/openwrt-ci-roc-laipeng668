@@ -164,11 +164,11 @@ jobs:
       if: steps.compile.outputs.status == 'success' && env.FIRMWARE_RELEASE == 'true'
       uses: softprops/action-gh-release@v2
       with:
-        name: R${{ env.DATE }} for ${{ env.FIRMWARE_TAG }}
+        tag_name: R${{ env.DATE }} for ${{ env.FIRMWARE_TAG }}
         #allowUpdates: true
-        tag: ${{ env.FIRMWARE_TAG }}
+        #tag: ${{ env.FIRMWARE_TAG }}
         token: ${{ secrets.GITHUB_TOKEN }}
-        artifacts: ${{ env.FIRMWARE_PATH }}/*
+        #artifacts: ${{ env.FIRMWARE_PATH }}/*
         body: |
           **This is OpenWrt Firmware for ${{ env.FIRMWARE_TAG }}** (24.10分支，欢迎下载测试！)
           ### 📒 固件信息(带WIFI)
