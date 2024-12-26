@@ -164,7 +164,7 @@ jobs:
       if: steps.compile.outputs.status == 'success' && env.FIRMWARE_RELEASE == 'true'
       uses: softprops/action-gh-release@v2
       with:
-        tag_name: R${{ env.DATE }} for ${{ env.FIRMWARE_TAG }}
+        tag_name: R${{ env.DATE }}_for_${{ env.FIRMWARE_TAG }}
         #allowUpdates: true
         #tag: ${{ env.FIRMWARE_TAG }}
         token: ${{ secrets.GITHUB_TOKEN }}
